@@ -129,8 +129,8 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 ########################
 # S3 BUCKET
 ########################
-resource "aws_s3_bucket" "artifact_bucket" {
-  bucket = "my-war-bucket"
+resource "aws_s3_bucket" "artifact_bucket1765" {
+  bucket = "my-war-bucket1765"
 
   tags = {
     Name = "war-artifacts"
@@ -138,7 +138,7 @@ resource "aws_s3_bucket" "artifact_bucket" {
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = aws_s3_bucket.artifact_bucket.id
+  bucket = aws_s3_bucket.artifact_bucket1765.id
 
   versioning_configuration {
     status = "Enabled"
@@ -162,7 +162,7 @@ resource "aws_ecr_repository" "app_repo" {
 
 # ANSIBLE
 resource "aws_instance" "ansible" {
-  ami                    = "ami-0030e4319cbf4dbf2"
+  ami                    = "ami-05cf1e9f73fbad2e2"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
   subnet_id              = data.aws_subnets.default.ids[0]
@@ -177,7 +177,7 @@ resource "aws_instance" "ansible" {
 
 # JENKINS MASTER
 resource "aws_instance" "jenkins_master" {
-  ami                    = "ami-0030e4319cbf4dbf2"
+  ami                    = "ami-05cf1e9f73fbad2e2"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
   subnet_id              = data.aws_subnets.default.ids[0]
@@ -192,7 +192,7 @@ resource "aws_instance" "jenkins_master" {
 
 # JENKINS SLAVE
 resource "aws_instance" "jenkins_slave" {
-  ami                    = "ami-0030e4319cbf4dbf2"
+  ami                    = "ami-05cf1e9f73fbad2e2"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
   subnet_id              = data.aws_subnets.default.ids[0]
@@ -209,7 +209,7 @@ resource "aws_instance" "jenkins_slave" {
 # OUTPUTS
 ########################
 output "s3_bucket" {
-  value = aws_s3_bucket.artifact_bucket.bucket
+  value = aws_s3_bucket.artifact_bucket1765.bucket
 }
 
 output "ecr_repo_url" {

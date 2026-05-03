@@ -8,7 +8,7 @@ environment {
     PATH = "/opt/apache-maven-3.8.9/bin:$PATH"
     (SONAR_TOKEN = credentials('SONAR_TOKEN'))
     AWS_REGION = 'us-east-1'
-    S3_BUCKET = 'my-war-bucket'
+    S3_BUCKET = 'my-war-bucket1765'
     ECR_REPO = '642391958117.dkr.ecr.us-east-1.amazonaws.com/taxi-booking-app'
     IMAGE_TAG = "v1.${BUILD_NUMBER}"
     
