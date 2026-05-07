@@ -6,7 +6,7 @@ pipeline {
     }
 environment {
     PATH = "/opt/apache-maven-3.9.15/bin:$PATH"
-    (SONAR_TOKEN = credentials('SONAR_TOKEN'))
+    SONAR_TOKEN = credentials ('SONAR_TOKEN')
     AWS_REGION = 'us-east-1'
     S3_BUCKET = 'my-war-bucket147'
     ECR_REPO = '977881853088.dkr.ecr.us-east-1.amazonaws.com/taxi-booking-app'
@@ -35,7 +35,7 @@ environment {
                     sh """
                     mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                     -Dsonar.projectKey=taxi-app125_sonarqube \
-                    -Dsonar.organization=Sandip Ray-taxi-app \
+                    -Dsonar.organization=Sandip-Ray-taxi-app \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.token=${SONAR_TOKEN}
                     """
