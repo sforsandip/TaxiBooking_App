@@ -8,8 +8,8 @@ environment {
     PATH = "/opt/apache-maven-3.9.15/bin:$PATH"
     (SONAR_TOKEN = credentials('SONAR_TOKEN'))
     AWS_REGION = 'us-east-1'
-    S3_BUCKET = 'my-war-bucket1765'
-    ECR_REPO = '642391958117.dkr.ecr.us-east-1.amazonaws.com/taxi-booking-app'
+    S3_BUCKET = 'my-war-bucket147'
+    ECR_REPO = '977881853088.dkr.ecr.us-east-1.amazonaws.com/taxi-booking-app'
     IMAGE_TAG = "v1.${BUILD_NUMBER}"
     
 }
@@ -34,8 +34,8 @@ environment {
                     // Run SonarQube analysis
                     sh """
                     mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                    -Dsonar.projectKey=taxi-app-033_taxi-app \
-                    -Dsonar.organization=taxi-app-033 \
+                    -Dsonar.projectKey=taxi-app125_sonarqube \
+                    -Dsonar.organization=Sandip Ray-taxi-app \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.token=${SONAR_TOKEN}
                     """
