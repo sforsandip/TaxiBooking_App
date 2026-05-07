@@ -34,8 +34,8 @@ environment {
                     // Run SonarQube analysis
                     sh """
                     mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                    -Dsonar.projectKey=taxi-app125_sonarqube \
-                    -Dsonar.organization=Sandip-Ray-taxi-app \
+                    -Dsonar.projectKey=sandip-ray_sandip-ray\
+                    -Dsonar.organization=sandip-ray \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.token=${SONAR_TOKEN}
                     """
